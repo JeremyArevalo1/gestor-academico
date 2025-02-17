@@ -1,0 +1,44 @@
+[{
+  "_id": {
+    "$oid": "67b308b374dff2a920d9e486"
+  },
+  "alumno": {
+    "$oid": "67b2a7ac72225a1a4127daaf"
+  },
+  "cursos": [
+    {
+      "$oid": "67b2d2956052ab912cc32b83"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-02-17T10:00:19.227Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-17T10:00:19.227Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b308fc74dff2a920d9e48a"
+  },
+  "alumno": {
+    "$oid": "67b2a7ac72225a1a4127daaf"
+  },
+  "cursos": [
+    {
+      "$oid": "67b2d3e3ffb8b1ed7f95489c"
+    },
+    {
+      "$oid": "67b2f605f6bba38ff67d5932"
+    },
+    {
+      "$oid": "67b2f661f6bba38ff67d5934"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-02-17T10:01:32.403Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-17T10:35:50.048Z"
+  }
+}]

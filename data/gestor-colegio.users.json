@@ -1,0 +1,91 @@
+[{
+  "_id": {
+    "$oid": "67b2a56ade4c2508e1034939"
+  },
+  "name": "Elmer",
+  "surname": "Santos",
+  "username": "Esantos",
+  "email": "elmer@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$5/QdBUSvCuVepF/v6gEq4Q$Gl5DmXEqOgBFFxqplDgp3jymxIiDgccjD9aM4lvKyrE",
+  "role": "TEACHER_ROLE",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-02-17T02:56:42.414Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-17T02:56:42.414Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b2a5dade4c2508e1034941"
+  },
+  "name": "Jeremy",
+  "surname": "Arevalo",
+  "username": "Jarevalo",
+  "email": "jeremy@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$+RahNtqYYb9W9PMDokDeVw$TzvG23UNLpyZNkaoPSVgmqsB90lOdbMxxs/F8QgD9TE",
+  "role": "STUDENT_ROLE",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-02-17T02:58:34.776Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-17T02:58:34.776Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b2a7ac72225a1a4127daaf"
+  },
+  "name": "Jorge",
+  "surname": "Peralta",
+  "username": "Jperalta",
+  "email": "jorge@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$kMuJJWoAHrjNuMjkIb/Cdg$5fHNQBXE1sOmBketzJ4wso8GQAwRuv9BaXqH5G/OzXI",
+  "role": "STUDENT_ROLE",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-02-17T03:06:20.442Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-17T04:51:56.882Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b2c967be13d9b7db56404e"
+  },
+  "name": "Estuardo",
+  "surname": "Gonzales",
+  "username": "Egonzales",
+  "email": "estuardo@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$ilENNhMlXav7JqTnPX4Bhw$CCy0pH6AyFKq8iN9wFXzBFHeLdNpm8SyuCr0gXS6zao",
+  "role": "STUDENT_ROLE",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-02-17T05:30:15.276Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-17T05:30:15.276Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b2eb72cf08061d53793473"
+  },
+  "name": "papu",
+  "surname": "lopez",
+  "username": "plopez",
+  "email": "papu@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$v7wiBLTPKBSpJVtGo2TI0Q$qTB4a60HJl6ui5wuy1TJsjlnOlhIRbT5qScAa5mNEfQ",
+  "role": "STUDENT_ROLE",
+  "estado": true,
+  "courses": [],
+  "createdAt": {
+    "$date": "2025-02-17T07:55:30.702Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-17T07:55:30.702Z"
+  }
+}]

@@ -1,0 +1,78 @@
+[{
+  "_id": {
+    "$oid": "67b2d2956052ab912cc32b83"
+  },
+  "name": "Matematicas",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-17T06:09:25.594Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-17T07:13:41.804Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b2d3ceffb8b1ed7f954898"
+  },
+  "name": "Seminario",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-17T06:14:38.908Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-17T06:14:38.908Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b2d3daffb8b1ed7f95489a"
+  },
+  "name": "Taller",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-17T06:14:50.567Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-17T06:14:50.567Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b2d3e3ffb8b1ed7f95489c"
+  },
+  "name": "Tecnologia",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-17T06:14:59.042Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-17T06:14:59.042Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b2f605f6bba38ff67d5932"
+  },
+  "name": "estadistica",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-17T08:40:37.487Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-17T08:40:37.487Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b2f661f6bba38ff67d5934"
+  },
+  "name": "etica",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-17T08:42:09.633Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-17T08:42:09.633Z"
+  }
+}]

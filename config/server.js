@@ -6,6 +6,10 @@ import helmet from "helmet";
 import morgan from "morgan";
 import { dbConnection } from './mongo.js';
 import limiter from '../src/middlewares/validar-cant-peticiones.js';
+import authRoutes from '../src/auth/auth-router.js'
+import userRoutes from '../src/users/user.routes.js'
+import coursesRoutes from '../src/courses/courses.routes.js'
+import studentsRoutes from '../src/students/student.routes.js';
 
 const middlewares = (app) => {
     app.use(express.urlencoded({ extended : false }));
@@ -17,7 +21,10 @@ const middlewares = (app) => {
 }
 
 const routes = (app) => {
-
+    app.use('/gestorAcademico/v1/auth', authRoutes);
+    app.use('/gestorAcademico/v1/users', userRoutes);
+    app.use('/gestorAcademico/v1/courses', coursesRoutes);
+    app.use('/gestorAcademico/v1/alumnos', studentsRoutes);
 }
 
 const conectarDB = async () => {
