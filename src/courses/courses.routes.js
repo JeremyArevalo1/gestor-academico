@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { check } from 'express-validator';
-import { getCourses, saveCourses, getCourseById, updateCourse, deleteCourse } from './courses.controller.js';
+import { getCourses, saveCourses, getCourseById, updateCourse, deleteCourse, getCoursesWithStudents } from './courses.controller.js';
 import { validarCampos } from '../middlewares/validar-campos.js';
 import { coursesValidator } from '../middlewares/validator.js';
 
@@ -46,5 +46,10 @@ router.delete(
     ],
     deleteCourse
 );
+
+router.get(
+    '/',
+    getCoursesWithStudents
+ )
 
 export default router;

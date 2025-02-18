@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"papu\",\r\n    \"surname\": \"lopez\",\r\n    \"username\": \"plopez\",\r\n    \"email\": \"papu@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"role\": \"STUDENT_ROLE\"\r\n}",
+							"raw": "{\r\n    \"name\": \"Balan\",\r\n    \"surname\": \"Carranza\",\r\n    \"username\": \"bcarranza\",\r\n    \"email\": \"balam@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"role\": \"TEACHER_ROLE\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -47,7 +47,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"jorge@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
+							"raw": "{\r\n    \"email\": \"jose@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -131,9 +131,21 @@
 				},
 				{
 					"name": "Buscar",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "http://localhost:3001/gestorAcademico/v1/users/findUser/67b2a7ac72225a1a4127daaf",
 							"protocol": "http",
@@ -186,7 +198,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"etica\"\r\n\r\n}",
+							"raw": "{\r\n    \"name\": \"Matematicas\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -246,11 +258,23 @@
 				},
 				{
 					"name": "Buscar",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "http://localhost:3001/gestorAcademico/v1/courses/67b2d2956052ab912cc32b83",
+							"raw": "http://localhost:3001/gestorAcademico/v1/courses/67b41cd87b68113bcf146048",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -260,7 +284,7 @@
 								"gestorAcademico",
 								"v1",
 								"courses",
-								"67b2d2956052ab912cc32b83"
+								"67b41cd87b68113bcf146048"
 							]
 						}
 					},
@@ -281,7 +305,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3001/gestorAcademico/v1/courses/67b2d2956052ab912cc32b83",
+							"raw": "http://localhost:3001/gestorAcademico/v1/courses/67b41d54979a5b608f1782d7",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -291,7 +315,7 @@
 								"gestorAcademico",
 								"v1",
 								"courses",
-								"67b2d2956052ab912cc32b83"
+								"67b41d54979a5b608f1782d7"
 							]
 						}
 					},
@@ -312,7 +336,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3001/gestorAcademico/v1/courses/67b2e4c0847141f7c6ae1213",
+							"raw": "http://localhost:3001/gestorAcademico/v1/courses/67b41d54979a5b608f1782d7",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -322,7 +346,7 @@
 								"gestorAcademico",
 								"v1",
 								"courses",
-								"67b2e4c0847141f7c6ae1213"
+								"67b41d54979a5b608f1782d7"
 							]
 						}
 					},
@@ -340,7 +364,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"alumno\": \"67b2a5dade4c2508e1034941\",\r\n  \"cursos\": [\"67b2c967be13d9b7db56404e\"]\r\n}",
+							"raw": "{\r\n  \"alumno\": \"Jorge\",\r\n  \"cursos\": [\"Fisica Fundamental\"]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -370,7 +394,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/gestorAcademico/v1/alumnos/67b30dfdefcd3abe1f5b5a31",
+							"raw": "http://localhost:3001/gestorAcademico/v1/alumnos/67b41fb865c493cc8f6f1846",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -380,17 +404,9 @@
 								"gestorAcademico",
 								"v1",
 								"alumnos",
-								"67b30dfdefcd3abe1f5b5a31"
+								"67b41fb865c493cc8f6f1846"
 							]
 						}
-					},
-					"response": []
-				},
-				{
-					"name": "Buscar",
-					"request": {
-						"method": "GET",
-						"header": []
 					},
 					"response": []
 				},
@@ -454,6 +470,117 @@
 								"v1",
 								"alumnos",
 								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Teachers",
+			"item": [
+				{
+					"name": "Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/gestorAcademico/v1/profesores/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"gestorAcademico",
+								"v1",
+								"profesores",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Agregar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"profesor\": \"Cesar\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/gestorAcademico/v1/profesores/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"gestorAcademico",
+								"v1",
+								"profesores",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/gestorAcademico/v1/profesores/67b4202465c493cc8f6f185e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"gestorAcademico",
+								"v1",
+								"profesores",
+								"67b4202465c493cc8f6f185e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"profesor\": \"67b420a265c493cc8f6f1870\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/gestorAcademico/v1/profesores/67b4204865c493cc8f6f1868",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"gestorAcademico",
+								"v1",
+								"profesores",
+								"67b4204865c493cc8f6f1868"
 							]
 						}
 					},

@@ -7,7 +7,7 @@ export const registerValidator = [
     body('surname', 'The surname is required').not().isEmpty(),
     body('email', 'you must enter a valid email').isEmail(),
     body('email').custom(existenteEmail),
-    body('role').custom(esRoleValido),
+    body('role').optional(),
     body('password', 'Password must be at least 6 characteres').isLength({min: 6}),
     validarCampos
 ];

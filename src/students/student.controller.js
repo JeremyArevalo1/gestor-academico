@@ -13,7 +13,7 @@ export const createStudent = async (req, res) => {
         if (!user || user.role !== 'STUDENT_ROLE') {
             return res.status(400).json({
                 success: false,
-                message: 'El usuario debe tener el rol de estudiante (STUDENT_ROLE)' 
+                message: 'El usuario debe tener el rol de estudiante (STUDENT_ROLE) o no existe el usuario' 
             });
         }
 
@@ -31,6 +31,28 @@ export const createStudent = async (req, res) => {
             });
         }
 
+        let existingStudent = await Student.findOne({ alumno: user._id });
+
+        if (existingStudent) {
+            const existingCoursesIds = existingStudent.cursos.map(course => course.toString());
+            const existingCourses = await Courses.find({ _id: { $in: existingCoursesIds } });
+            const duplicateCourses = courses.filter(course => existingCoursesIds.includes(course._id.toString()));
+
+            if (duplicateCourses.length > 0) {
+                return res.status(400).json({
+                    success: false,
+                    message: `El estudiante ya está asignado a los siguientes cursos: ${duplicateCourses.map(course => course.name).join(', ')}`
+                });
+            }
+
+            if (existingCoursesIds.length + cursos.length > 3) {
+                return res.status(400).json({
+                    success: false,
+                    message: 'El estudiante no puede tener más de 3 cursos asignados en total.'
+                });
+            }
+        }
+
         const newStudent = new Student({
             alumno: user._id,
             cursos: courses.map(courses => courses._id)
@@ -38,6 +60,7 @@ export const createStudent = async (req, res) => {
         await newStudent.save();
 
         res.status(201).json({
+            success: true,
             message: 'Estudiante creado con éxito',
             newStudent
         });
@@ -54,8 +77,6 @@ export const getStudents = async (req, res ) => {
     try {
         const students = await Student.find()
         .populate('alumno cursos');
-
-
 
         res.status(200).json({
             success: true,
@@ -74,38 +95,50 @@ export const editStudent = async (req = request, res = response) => {
     try {
         const { id } = req.params;
         const { alumno, cursos } = req.body;
-
-        // 1. Verificamos que el estudiante exista
         const student = await Student.findById(id);
+
         if (!student) {
-            return res.status(404).json({ message: 'Estudiante no encontrado' });
+            return res.status(404).json({
+                message: 'Estudiante no encontrado'
+            });
         }
 
-        // 2. Actualizamos los datos del estudiante
         student.alumno = alumno || student.alumno;
         student.cursos = cursos || student.cursos;
 
-        // 3. Guardamos los cambios
         await student.save();
 
-        res.status(200).json({ message: 'Estudiante actualizado con éxito', student });
+        res.status(200).json({
+            message: 'Estudiante actualizado con éxito',
+            student
+        });
     } catch (error) {
-        res.status(500).json({ message: 'Error al editar el estudiante', error });
+        res.status(500).json({ 
+        message: 'Error al editar el estudiante',
+        error
+    });
     }
 };
 
 export const deleteStudent = async (req = request, res = response) => {
     try {
         const { id } = req.params;
-
-        // Eliminar el estudiante
         const student = await Student.findByIdAndDelete(id);
+
         if (!student) {
-            return res.status(404).json({ message: 'Estudiante no encontrado' });
+            return res.status(404).json({
+                message:'Estudiante no encontrado'
+            });
         }
 
-        res.status(200).json({ message: 'Estudiante eliminado con éxito' });
+        res.status(200).json({
+            success: true,
+            message: 'Estudiante eliminado con éxito'
+        });
     } catch (error) {
-        res.status(500).json({ message: 'Error al eliminar el estudiante', error });
+        res.status(500).json({
+            message: 'Error al eliminar el estudiante',
+            error
+        });
     }
 };

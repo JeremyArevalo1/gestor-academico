@@ -1,4 +1,5 @@
-import Courses from './courses.model.js'
+import Courses from '../courses/courses.model.js';
+import Student from '../students/students.model.js';
 
 export const saveCourses = async (req, res) => {
     try {
@@ -38,7 +39,7 @@ export const getCourses = async(req, res) =>{
 
     try {
 
-        const courses = await Courses.find(query)
+        const courses = await Courses.find()
             .skip(Number(desde))
             .limit(Number(limit));
 
@@ -47,13 +48,9 @@ export const getCourses = async(req, res) =>{
                     ...courses.toObject(),
                 }
             }));
-
-            const total = await Courses.countDocuments(query);
-
         
         res.status(200).json({
             success: true,
-            total,
             courses: coursesWithInfo
         });
     } catch (error) {
@@ -140,3 +137,43 @@ export const deleteCourse = async (req, res) =>{
     }
 }
 
+
+
+export const getCoursesWithStudents = async (req, res) => {
+    try {
+        // Intentamos obtener todos los cursos
+        const courses = await Courses.find();
+
+        // Si no encontramos cursos, responde con un mensaje adecuado
+        if (!courses || courses.length === 0) {
+            return res.status(404).json({
+                success: false,
+                message: 'No se encontraron cursos.'
+            });
+        }
+
+        // Por cada curso, obtenemos los estudiantes asignados
+        const coursesWithStudents = await Promise.all(
+            courses.map(async (course) => {
+                const students = await Student.find({ cursos: course._id }).populate('alumno', 'name'); // Obtener estudiantes asignados a este curso
+                return {
+                    ...course.toObject(),
+                    students: students // Agregar los estudiantes al curso
+                };
+            })
+        );
+
+        // Responde con los cursos y los estudiantes
+        res.status(200).json({
+            success: true,
+            courses: coursesWithStudents
+        });
+    } catch (error) {
+        console.error("Error al obtener los cursos con estudiantes:", error);
+        res.status(500).json({
+            success: false,
+            message: 'Error al obtener los cursos con estudiantes.',
+            error: error.message
+        });
+    }
+};

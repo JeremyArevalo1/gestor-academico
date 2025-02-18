@@ -10,6 +10,7 @@ import authRoutes from '../src/auth/auth-router.js'
 import userRoutes from '../src/users/user.routes.js'
 import coursesRoutes from '../src/courses/courses.routes.js'
 import studentsRoutes from '../src/students/student.routes.js';
+import teacherRoutes from '../src/teacher/teacher.routes.js'
 
 const middlewares = (app) => {
     app.use(express.urlencoded({ extended : false }));
@@ -25,6 +26,7 @@ const routes = (app) => {
     app.use('/gestorAcademico/v1/users', userRoutes);
     app.use('/gestorAcademico/v1/courses', coursesRoutes);
     app.use('/gestorAcademico/v1/alumnos', studentsRoutes);
+    app.use('/gestorAcademico/v1/profesores', teacherRoutes);
 }
 
 const conectarDB = async () => {

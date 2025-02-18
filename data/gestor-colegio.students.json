@@ -1,44 +1,47 @@
 [{
   "_id": {
-    "$oid": "67b308b374dff2a920d9e486"
+    "$oid": "67b41ef2979a5b608f1782ec"
   },
   "alumno": {
-    "$oid": "67b2a7ac72225a1a4127daaf"
+    "$oid": "67b41ae3789ed4a45dcd0f9b"
   },
   "cursos": [
     {
-      "$oid": "67b2d2956052ab912cc32b83"
+      "$oid": "67b41cd87b68113bcf146048"
+    },
+    {
+      "$oid": "67b41cf77b68113bcf14604e"
+    },
+    {
+      "$oid": "67b41d54979a5b608f1782d7"
     }
   ],
   "createdAt": {
-    "$date": "2025-02-17T10:00:19.227Z"
+    "$date": "2025-02-18T05:47:30.495Z"
   },
   "updatedAt": {
-    "$date": "2025-02-17T10:00:19.227Z"
+    "$date": "2025-02-18T05:47:30.495Z"
   }
 },
 {
   "_id": {
-    "$oid": "67b308fc74dff2a920d9e48a"
+    "$oid": "67b41f4665c493cc8f6f182d"
   },
   "alumno": {
-    "$oid": "67b2a7ac72225a1a4127daaf"
+    "$oid": "67b41bc15dbedc998ce459ff"
   },
   "cursos": [
     {
-      "$oid": "67b2d3e3ffb8b1ed7f95489c"
+      "$oid": "67b41cf77b68113bcf14604e"
     },
     {
-      "$oid": "67b2f605f6bba38ff67d5932"
-    },
-    {
-      "$oid": "67b2f661f6bba38ff67d5934"
+      "$oid": "67b41d54979a5b608f1782d7"
     }
   ],
   "createdAt": {
-    "$date": "2025-02-17T10:01:32.403Z"
+    "$date": "2025-02-18T05:48:54.446Z"
   },
   "updatedAt": {
-    "$date": "2025-02-17T10:35:50.048Z"
+    "$date": "2025-02-18T05:48:54.446Z"
   }
 }]

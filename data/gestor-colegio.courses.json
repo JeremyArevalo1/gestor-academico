@@ -1,78 +1,70 @@
 [{
   "_id": {
-    "$oid": "67b2d2956052ab912cc32b83"
-  },
-  "name": "Matematicas",
-  "status": true,
-  "createdAt": {
-    "$date": "2025-02-17T06:09:25.594Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-17T07:13:41.804Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67b2d3ceffb8b1ed7f954898"
-  },
-  "name": "Seminario",
-  "status": true,
-  "createdAt": {
-    "$date": "2025-02-17T06:14:38.908Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-17T06:14:38.908Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67b2d3daffb8b1ed7f95489a"
+    "$oid": "67b41cd87b68113bcf146048"
   },
   "name": "Taller",
-  "status": true,
+  "estado": true,
+  "students": [],
   "createdAt": {
-    "$date": "2025-02-17T06:14:50.567Z"
+    "$date": "2025-02-18T05:38:32.068Z"
   },
   "updatedAt": {
-    "$date": "2025-02-17T06:14:50.567Z"
+    "$date": "2025-02-18T05:38:32.068Z"
   }
 },
 {
   "_id": {
-    "$oid": "67b2d3e3ffb8b1ed7f95489c"
+    "$oid": "67b41cdf7b68113bcf14604a"
   },
   "name": "Tecnologia",
-  "status": true,
+  "estado": true,
+  "students": [],
   "createdAt": {
-    "$date": "2025-02-17T06:14:59.042Z"
+    "$date": "2025-02-18T05:38:39.004Z"
   },
   "updatedAt": {
-    "$date": "2025-02-17T06:14:59.042Z"
+    "$date": "2025-02-18T05:38:39.004Z"
   }
 },
 {
   "_id": {
-    "$oid": "67b2f605f6bba38ff67d5932"
+    "$oid": "67b41cec7b68113bcf14604c"
   },
-  "name": "estadistica",
-  "status": true,
+  "name": "Fisica Fundamental",
+  "estado": true,
+  "students": [],
   "createdAt": {
-    "$date": "2025-02-17T08:40:37.487Z"
+    "$date": "2025-02-18T05:38:52.825Z"
   },
   "updatedAt": {
-    "$date": "2025-02-17T08:40:37.487Z"
+    "$date": "2025-02-18T05:38:52.825Z"
   }
 },
 {
   "_id": {
-    "$oid": "67b2f661f6bba38ff67d5934"
+    "$oid": "67b41cf77b68113bcf14604e"
   },
-  "name": "etica",
-  "status": true,
+  "name": "Quimica",
+  "estado": true,
+  "students": [],
   "createdAt": {
-    "$date": "2025-02-17T08:42:09.633Z"
+    "$date": "2025-02-18T05:39:03.493Z"
   },
   "updatedAt": {
-    "$date": "2025-02-17T08:42:09.633Z"
+    "$date": "2025-02-18T05:39:03.493Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b41d54979a5b608f1782d7"
+  },
+  "name": "Matematicas",
+  "estado": true,
+  "students": [],
+  "createdAt": {
+    "$date": "2025-02-18T05:40:36.030Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-18T05:45:58.566Z"
   }
 }]

@@ -9,6 +9,11 @@ const CoursesSchema = Schema({
         type: Boolean,
         default: true
     },
+    students: [{ 
+        type: Schema.Types.ObjectId, 
+        ref: 'student',  // Asegúrate de que esto sea correcto
+        required: true
+    }]
 },
     {
         timestamps: true,
