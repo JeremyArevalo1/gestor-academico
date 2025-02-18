@@ -1,5 +1,5 @@
 import { Schema, model } from "mongoose";
-import User from '../users/user.model.js';  // Importa el modelo de usuario correctamente
+import User from '../users/user.model.js';
 
 const studentSchema = new Schema({
     alumno: {

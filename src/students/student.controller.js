@@ -1,17 +1,26 @@
 import { response, request } from "express";
 import User from '../users/user.model.js';
 import Student from '../students/students.model.js';
+import Courses from '../courses/courses.model.js';
 
 export const createStudent = async (req, res) => {
     try {
         const { alumno, cursos } = req.body;
+        const user = await User.findOne({ name: alumno });
+        const courses = await Courses.find({ name: cursos });
 
-        const user = await User.findById(alumno);
 
         if (!user || user.role !== 'STUDENT_ROLE') {
             return res.status(400).json({
                 success: false,
                 message: 'El usuario debe tener el rol de estudiante (STUDENT_ROLE)' 
+            });
+        }
+
+        if (courses.length !== cursos.length) {
+            return res.status(400).json({
+                success: false,
+                message: 'El curso no existe.'
             });
         }
 
@@ -23,8 +32,8 @@ export const createStudent = async (req, res) => {
         }
 
         const newStudent = new Student({
-            alumno,
-            cursos
+            alumno: user._id,
+            cursos: courses.map(courses => courses._id)
         });
         await newStudent.save();
 
@@ -41,12 +50,20 @@ export const createStudent = async (req, res) => {
     }
 };
 
-export const getStudents = async (req = request, res = response) => {
+export const getStudents = async (req, res ) => {
     try {
-        const students = await Student.find().populate('alumno cursos');
-        res.status(200).json(students);
+        const students = await Student.find()
+        .populate('alumno cursos');
+
+
+
+        res.status(200).json({
+            success: true,
+            students
+        });
     } catch (error) {
         res.status(500).json({
+            success:false,
             message: 'Error al obtener los estudiantes',
             error
         });
