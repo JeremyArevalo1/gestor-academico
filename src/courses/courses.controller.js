@@ -141,10 +141,8 @@ export const deleteCourse = async (req, res) =>{
 
 export const getCoursesWithStudents = async (req, res) => {
     try {
-        // Intentamos obtener todos los cursos
         const courses = await Courses.find();
 
-        // Si no encontramos cursos, responde con un mensaje adecuado
         if (!courses || courses.length === 0) {
             return res.status(404).json({
                 success: false,
@@ -152,18 +150,17 @@ export const getCoursesWithStudents = async (req, res) => {
             });
         }
 
-        // Por cada curso, obtenemos los estudiantes asignados
         const coursesWithStudents = await Promise.all(
             courses.map(async (course) => {
-                const students = await Student.find({ cursos: course._id }).populate('alumno', 'name'); // Obtener estudiantes asignados a este curso
+                const students = await Student.find({ cursos: course._id }).populate('alumno', 'name');
                 return {
                     ...course.toObject(),
-                    students: students // Agregar los estudiantes al curso
+                    students: students
                 };
             })
         );
 
-        // Responde con los cursos y los estudiantes
+
         res.status(200).json({
             success: true,
             courses: coursesWithStudents

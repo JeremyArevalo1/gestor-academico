@@ -3,7 +3,6 @@ import { createStudent, getStudents, editStudent, deleteStudent } from './studen
 
 const router = Router();
 
-// Rutas CRUD para estudiantes
 router.get(
     '/',
     getStudents

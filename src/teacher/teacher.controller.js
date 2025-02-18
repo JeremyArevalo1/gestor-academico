@@ -13,7 +13,6 @@ export const createTeacher = async(req, res) =>{
             });
         }
 
-         // Verifica si ya existe un profesor con el mismo nombre
          const existingTeacher = await Teacher.findOne({ name: profesor });
 
          if (existingTeacher) {
