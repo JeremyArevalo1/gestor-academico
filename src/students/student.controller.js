@@ -57,7 +57,13 @@ export const createStudent = async (req, res) => {
             alumno: user._id,
             cursos: courses.map(courses => courses._id)
         });
+
         await newStudent.save();
+
+        for (const course of courses) {
+            course.students.push(newStudent._id);
+            await course.save();
+        }
 
         res.status(201).json({
             success: true,

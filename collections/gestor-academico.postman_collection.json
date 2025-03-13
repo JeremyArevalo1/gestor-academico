@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Balan\",\r\n    \"surname\": \"Carranza\",\r\n    \"username\": \"bcarranza\",\r\n    \"email\": \"balam@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"role\": \"TEACHER_ROLE\"\r\n}",
+							"raw": "{\r\n    \"name\": \"Elmer\",\r\n    \"surname\": \"Santos\",\r\n    \"username\": \"elmer124\",\r\n    \"email\": \"elmer@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"role\": \"TEACHER_ROLE\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -47,7 +47,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"jose@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
+							"raw": "{\r\n    \"email\": \"jorge@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -102,7 +102,13 @@
 					"name": "Editar",
 					"request": {
 						"method": "PUT",
-						"header": [],
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2QyNjAxYWYyZGY1NGE5ZGUwNjM1YTQiLCJpYXQiOjE3NDE4NDY5ODgsImV4cCI6MTc0MTg1MDU4OH0.0Twt7OiK7w4_qPHpwtvrxMipvGPTHNjckUDmkdsIBmM",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\r\n    \"name\": \"Jorge\",\r\n    \"surname\": \"Peralta\",\r\n    \"username\": \"Jperalta\",\r\n    \"email\": \"jorge@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"role\": \"STUDENT_ROLE\"\r\n\r\n}",
@@ -113,7 +119,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3001/gestorAcademico/v1/users/67b2a7ac72225a1a4127daaf",
+							"raw": "http://localhost:3001/gestorAcademico/v1/users/67d2601af2df54a9de0635a4",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -123,7 +129,7 @@
 								"gestorAcademico",
 								"v1",
 								"users",
-								"67b2a7ac72225a1a4127daaf"
+								"67d2601af2df54a9de0635a4"
 							]
 						}
 					},
@@ -168,9 +174,15 @@
 					"name": "Eliminar",
 					"request": {
 						"method": "DELETE",
-						"header": [],
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2QyNjAxYWYyZGY1NGE5ZGUwNjM1YTQiLCJpYXQiOjE3NDE4NDcwNzIsImV4cCI6MTc0MTg1MDY3Mn0.u6wtgfM2TcxBFJCKh9DJx6EU1tdvn3wwH6q4ChwGCBM",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "http://localhost:3001/gestorAcademico/v1/users/",
+							"raw": "http://localhost:3001/gestorAcademico/v1/users/67d2601af2df54a9de0635a4",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -180,7 +192,7 @@
 								"gestorAcademico",
 								"v1",
 								"users",
-								""
+								"67d2601af2df54a9de0635a4"
 							]
 						}
 					},
@@ -198,7 +210,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Matematicas\"\r\n}",
+							"raw": "{\r\n    \"name\": \"Fifu\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -364,7 +376,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"alumno\": \"Jorge\",\r\n  \"cursos\": [\"Fisica Fundamental\"]\r\n}",
+							"raw": "{\r\n  \"alumno\": \"Jeremy\",\r\n  \"cursos\": [\"Matematicas\", \"Fifu\"]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -509,7 +521,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"profesor\": \"Cesar\"\r\n}",
+							"raw": "{\r\n  \"profesor\": \"Elmer\",\r\n  \"cursos\": \"Matematicas\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -562,7 +574,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"profesor\": \"67b420a265c493cc8f6f1870\"\r\n}",
+							"raw": "{\r\n  \"profesor\": \"Elmer\",\r\n  \"cursos\": \"Fifu\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -570,7 +582,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3001/gestorAcademico/v1/profesores/67b4204865c493cc8f6f1868",
+							"raw": "http://localhost:3001/gestorAcademico/v1/profesores/67d2763792ea98857f2da6a1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -580,7 +592,7 @@
 								"gestorAcademico",
 								"v1",
 								"profesores",
-								"67b4204865c493cc8f6f1868"
+								"67d2763792ea98857f2da6a1"
 							]
 						}
 					},

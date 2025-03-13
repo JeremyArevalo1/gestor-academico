@@ -14,6 +14,11 @@ const teacherSchema = new Schema({
             message: 'Solo los usuarios con el rol TEACHER_ROLE pueden ser asignados como maestros.'
         }
     },
+    cursos: {
+        type: Schema.Types.ObjectId,
+        ref: 'courses',
+        required: true
+    }
 }, {
     timestamps: true,
     versionKey: false

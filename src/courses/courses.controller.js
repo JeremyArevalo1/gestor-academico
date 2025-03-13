@@ -34,32 +34,31 @@ export const saveCourses = async (req, res) => {
 };
 
 export const getCourses = async(req, res) =>{
-    const { limit = 10, desde = 0 } = req.query;
-    const query = { status: true };
-
+    
     try {
-
-        const courses = await Courses.find()
-            .skip(Number(desde))
-            .limit(Number(limit));
-
-            const coursesWithInfo = await Promise.all(courses.map(async(courses) =>{
-                return{
-                    ...courses.toObject(),
-                }
-            }));
-        
-        res.status(200).json({
-            success: true,
-            courses: coursesWithInfo
-        });
-    } catch (error) {
-        res.status(500).json({
-            success: false,
-            message: "Error al obtener los cursos",
-            error
-        });
-    }
+            const { limite = 10, desde = 0 } = req.query;
+            const query = { estado: true };
+    
+            const [total, courses] = await Promise.all([
+                Courses.countDocuments(query),
+                Courses.find(query)
+                    .skip(Number(desde))
+                    .limit(Number(limite))
+                    .populate('students', 'alumno')
+            ])
+    
+            res.status(200).json({
+                success: true,
+                total,
+                courses
+            })
+        } catch (error) {
+            res.status(500).json({
+                success: false,
+                msg: 'Error al obtener los cursos',
+                error
+            })
+        }
 }
 
 export const getCourseById = async (req, res) => {
